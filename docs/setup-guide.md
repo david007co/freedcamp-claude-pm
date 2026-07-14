@@ -129,30 +129,7 @@ This file is what makes Claude understand *you*. Spend 10–15 minutes on it.
 
 ---
 
-## Step 9 — Set up memory files
-
-Claude Code maintains persistent memory files so it remembers context between sessions.
-Copy the templates from `memory-templates/` to Claude's project memory directory:
-
-**On Mac/Linux:**
-```bash
-mkdir -p "~/.claude/projects/$(pwd | sed 's/\//-/g' | sed 's/://g')/memory"
-cp memory-templates/* "~/.claude/projects/$(pwd | sed 's/\//-/g' | sed 's/://g')/memory/"
-```
-
-**On Windows (PowerShell):**
-```powershell
-$slug = (Get-Location).Path -replace '[:\\/]', '-'
-$memDir = "$env:USERPROFILE\.claude\projects\$slug\memory"
-New-Item -ItemType Directory -Force $memDir
-Copy-Item memory-templates\* $memDir
-```
-
-Then open the copied files and fill in the templates with your information.
-
----
-
-## Step 10 — Configure Claude Code permissions
+## Step 9 — Configure Claude Code permissions
 
 In VS Code, open the command palette and search for "Claude Code: Open Settings".
 Or edit `.claude/settings.local.json` directly:
@@ -178,14 +155,15 @@ On Mac/Linux, replace `PowerShell` with `Bash`.
 
 ---
 
-## Step 11 — First session
+## Step 10 — First session
 
 Open the project in VS Code with Claude Code. Start a new conversation and say something like:
 
 > "Let's get started. My name is [name]. I have these projects in Freedcamp: [list them]. 
 > Here's what I'm currently working on: [give a quick status]."
 
-Claude will read `CLAUDE.md`, understand your setup, and be ready to help organize.
+Claude will read `CLAUDE.md`, fetch your projects from Freedcamp, ask a few questions about
+your context, and build its memory files automatically. You don't need to set up memory manually.
 
 From that point on, just talk naturally. Updates like:
 - "finished the homepage for client X"
