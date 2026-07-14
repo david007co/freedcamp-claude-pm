@@ -21,7 +21,7 @@ your projects and tasks organized — no manual Freedcamp maintenance required.
 ## Prerequisites
 
 - Python 3.8+
-- [Claude Code](https://claude.ai/code) (VS Code extension or CLI)
+- **[Claude Code VS Code extension](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)** *(recommended — easiest way to use this project)* or the [CLI](https://claude.ai/code)
 - A [Freedcamp](https://freedcamp.com) account (Free plan works; Pro recommended for time tracking)
 - Your Freedcamp API key and secret (from [freedcamp.com/my_apps](https://freedcamp.com/my_apps))
 
@@ -99,3 +99,4 @@ behind why most task management systems fail and why this one is designed differ
 
 Built on the [Freedcamp REST API v1](https://freedcamp.com/help_/tutorials/wiki/wiki_public/view/DFaab).
 Designed to work with [Claude Code](https://claude.ai/code) by Anthropic.
+Created by [@david007co](https://github.com/david007co).

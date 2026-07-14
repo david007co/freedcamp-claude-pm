@@ -53,7 +53,8 @@ python src/fc.py update-task <task_id> --status done    # Mark completed
 python src/fc.py update-task <task_id> --description "🔜 Next: ..."
 python src/fc.py update-task <task_id> --list-id <list_id>  # Move to another list
 python src/fc.py comment <task_id> "text"
-python src/fc.py create-project "title" [--description "..."]
+python src/fc.py create-project "title" --group-id <id> [--description "..."]
+# Note: always run `python src/fc.py projects` first to find the right group_id before creating
 python src/fc.py log-time <task_id> <minutes> <project_id> [--description "what was done"]
 ```
 

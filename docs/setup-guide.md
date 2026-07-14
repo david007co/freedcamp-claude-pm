@@ -9,8 +9,8 @@ Follow these steps in order. The whole setup takes about 20–30 minutes.
 Make sure you have:
 - **Python 3.8+** — `python --version` to check
 - **pip** — `pip --version`
-- **VS Code** with the [Claude Code extension](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
-  (or the Claude Code CLI: `npm install -g @anthropic-ai/claude-code`)
+- **[VS Code](https://code.visualstudio.com/) with the [Claude Code extension](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)** *(recommended — easiest way to use this project)*
+  *(alternative: Claude Code CLI via `npm install -g @anthropic-ai/claude-code`)*
 - A **Freedcamp account** — [freedcamp.com](https://freedcamp.com)
   - Free plan works for basic use
   - Pro plan ($) required for **Time Tracking** (log-time command)
@@ -77,22 +77,15 @@ FC_USER_ID=your_numeric_user_id_here
 
 ---
 
-## Step 6 — Test the connection and find your group IDs
+## Step 6 — Test the connection
 
 ```bash
 python src/fc.py projects
 ```
 
-You should see a JSON list of all your Freedcamp projects, each with a `group_id` field.
-**Copy these group IDs** — they are required when creating new projects via `create-project`.
-
-Example output:
-```json
-{ "id": "123456", "title": "My Project", "group": "Personal", "group_id": "789012" }
-```
-
-Note the group IDs for each group you'll use (e.g. Personal, Clients, Ideas).
-You'll pass one as `--group-id` when creating projects from Claude.
+You should see a JSON list of all your Freedcamp projects. This confirms your API credentials
+are working. You don't need to copy any IDs manually — when you ask Claude to create a new
+project, it will run this command itself to look up the right group ID automatically.
 
 If you get an error:
 - Double-check your API key and secret in `.env`
@@ -103,7 +96,7 @@ If you get an error:
 
 ## Step 7 — Set up your Personal Hub project in Freedcamp
 
-Your **Personal Hub** is the control center — equivalent to a "Quick Personal Todos" project.
+Your **Personal Hub** is the control center ~~equivalent to a "Quick Personal Todos"~~ project.
 It holds your Focus list, backlog, and inbox.
 
 **In the Freedcamp web UI:**
@@ -127,9 +120,10 @@ This returns the list IDs. Copy them into `CLAUDE.md` in the Focus system sectio
 
 Open `CLAUDE.md` and fill in:
 1. **Your context section** — your schedule, clients, projects, working style
-2. **Project mapping table** — run `python src/fc.py projects` and paste in your project IDs
-3. **Focus system list IDs** — from Step 7
-4. **Project mapping tips** — shortcuts so Claude knows "client X" = project Y
+2. **Focus system list IDs** — from Step 7
+3. **Project mapping tips** — shortcuts so Claude knows "client X" = project Y
+
+The project mapping table will be filled in by Claude during your first session — you don't need to look up IDs manually.
 
 This file is what makes Claude understand *you*. Spend 10–15 minutes on it.
 
