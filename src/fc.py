@@ -102,6 +102,7 @@ def cmd_projects(args):
             "title": p.get("project_name"),
             "description": (p.get("project_description") or "").strip(),
             "group": p.get("group_name") or "",
+            "group_id": p.get("group_id") or "",
             "active": p.get("f_active", True),
         }
         for p in projects

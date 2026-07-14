@@ -77,13 +77,24 @@ FC_USER_ID=your_numeric_user_id_here
 
 ---
 
-## Step 6 — Test the connection
+## Step 6 — Test the connection and find your group IDs
 
 ```bash
 python src/fc.py projects
 ```
 
-You should see a JSON list of all your Freedcamp projects. If you get an error:
+You should see a JSON list of all your Freedcamp projects, each with a `group_id` field.
+**Copy these group IDs** — they are required when creating new projects via `create-project`.
+
+Example output:
+```json
+{ "id": "123456", "title": "My Project", "group": "Personal", "group_id": "789012" }
+```
+
+Note the group IDs for each group you'll use (e.g. Personal, Clients, Ideas).
+You'll pass one as `--group-id` when creating projects from Claude.
+
+If you get an error:
 - Double-check your API key and secret in `.env`
 - Make sure the `.env` file is in the project root (same folder as `requirements.txt`)
 - Check that `python-dotenv` installed correctly: `pip install python-dotenv`
