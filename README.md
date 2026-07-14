@@ -1,10 +1,10 @@
-# Freedcamp + Claude Code — Personal Project Manager
+# Freedcamp + Claude Code: Personal Project Manager
 
 > **You talk. Claude organizes. Freedcamp reflects reality.**
 
 This project connects [Claude Code](https://claude.ai/code) to your Freedcamp account via API.
 You give casual text updates in the Claude Code chat. Claude handles all the API calls to keep
-your projects and tasks organized — no manual Freedcamp maintenance required.
+your projects and tasks organized, with no manual Freedcamp maintenance required.
 
 ---
 
@@ -92,6 +92,37 @@ You fill in that file once with your context. Everything else is automatic.
 
 Before building this, read `docs/why-this-works.md`. It explains the psychological principles
 behind why most task management systems fail and why this one is designed differently.
+
+---
+
+## Roadmap
+
+Ideas for future versions.
+
+**On-the-go access**
+The current interface requires VS Code open on your computer. The goal is to interact from anywhere:
+- Telegram or WhatsApp bot: send a message, Claude updates Freedcamp
+- Lightweight web form hosted on a home server or VPS
+- Email-in: subject line becomes a task, body becomes the description
+
+**Priority / urgency ranking**
+Add a 1-10 urgency field to tasks so Claude can rank what to work on next instead of guessing.
+
+**Smarter time tracking (when using the system for managing clients)**
+- Auto-generate invoice summaries by project and date range
+- Estimate vs. actual time comparison across tasks
+- Flag tasks that are running over estimate
+
+**Project health**
+- Detect stalled projects (no activity in N days) and surface them proactively
+- Suggest archiving or parking projects that haven't moved in months
+- Weekly digest: what got done, what's stuck, what's next
+
+**Recurring tasks**
+Support for tasks that repeat on a schedule (weekly, monthly) without manual re-creation.
+
+**GitHub / external integrations**
+Auto-create Freedcamp tasks from GitHub issues, Slack messages, or other tools via webhook.
 
 ---
 
